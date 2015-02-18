@@ -12,7 +12,8 @@
 
 	<!-- Use this appender to have logs go to one big log file -->
 	<appender name="File" class="org.apache.log4j.FileAppender">
-		<param name="File" value="/tmp/proai3_0/log/proai.log" />
+		<!-- <param name="File" value="/tmp/proai3_0/log/proai.log" /> -->
+		<param name="File" value="E:\tmp\proai3_0\log\proai.log" />
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern"
 				value="%p %d{yyyy-MM-dd' 'HH:mm:ss.SSS} [%t] (%c{1}) %m%n" />
@@ -22,7 +23,8 @@
 	<!-- Use this appender to have logs go to a rolling set of log files -->
 	<appender name="RollingFile"
 		class="org.apache.log4j.RollingFileAppender">
-		<param name="File" value="/tmp/proai3_0/log/proai.log" />
+		<!-- <param name="File" value="/tmp/proai3_0/log/proai.log" /> -->
+		<param name="File" value="E:\tmp\proai3_0\log\proai.log" />
 		<param name="MaxFileSize" value="20MB" />
 		<param name="MaxBackupIndex" value="5" />
 		<layout class="org.apache.log4j.PatternLayout">
@@ -52,12 +54,12 @@
 	</category>
 
 	<category name="proai">
-		<priority value="WARN" />
+		<priority value="INFO" />
 	</category>
 
 	<!-- Note: DEBUG level for this category will log ALL SQL! -->
 	<category name="proai.cache.RCDatabase">
-		<priority value="WARN" />
+		<priority value="INFO" />
 	</category>
 
 	<category name="org.apache.commons.httpclient.HttpMethodBase">
@@ -70,6 +72,7 @@
 		<priority value="INFO" />
 		<appender-ref ref="Console" />
 		<appender-ref ref="RollingFile" />
+		<appender-ref ref="File" />
 	</root>
 
 </log4j:configuration>

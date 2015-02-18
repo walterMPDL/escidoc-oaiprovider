@@ -314,7 +314,7 @@ public class EscidocQueryFactory implements Constants {
                 inputMemberIds =
                     getWithInputMemberIds.getResponseBodyAsStream();
                 parser.parse(inputMemberIds, dh);
-                dh.resetRecordsNumber();
+//                dh.resetRecordsNumber();
                 getWithInputMemberIds.releaseConnection();
                 inputMemberIds.close();
             }

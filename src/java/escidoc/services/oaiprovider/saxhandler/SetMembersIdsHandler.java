@@ -39,6 +39,9 @@ public class SetMembersIdsHandler extends DefaultHandler {
             inElement = true;
             recordPosition = null;
         }
+        if (localName.equals("numberOfRecords")) {
+        	recordsNumber = null;
+        }
 
     }
 
@@ -105,7 +108,7 @@ public class SetMembersIdsHandler extends DefaultHandler {
     public boolean isFinished() {
         if (recordsNumber.equals("0")) {
             return true;
-        } else if (Integer.parseInt(this.recordsNumber) == Integer
+        } else if (Integer.parseInt(this.recordsNumber) <= Integer
                 .parseInt(this.recordPosition)) {
             return true;
         } 
